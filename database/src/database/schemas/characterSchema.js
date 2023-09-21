@@ -10,8 +10,14 @@ const characterSchema = new Schema({
     eye_color: String,
     birth_year: String,
     gender: String,
-    homeworld: {type:String, ref:"planet"},
-    films: [{type:String, ref:"films"}]
+    homeworld: {type:String, ref:"Planet"},
+    films: [{type:String, ref:"Film"}]
 });
+
+characterSchema.statics.list= async function () {
+    return await this.find()
+        .populate('homeworld',['_id','name'])
+        .populate('films',['_id','title'])
+}
 
 module.exports = characterSchema;
