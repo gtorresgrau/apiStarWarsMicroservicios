@@ -9,7 +9,7 @@ server.use(express.json());
 
 server.use(require('./routes'));
 
-app.use(
+server.use(
     '/database', 
     createProxyMiddleware({
         target:'http://database:8004',
