@@ -10,8 +10,24 @@ const planetSchema = new Schema({
     gravity: String,
     terrain: String,
     surface_water: String,
-    res_idents: ["1", "2", "4", "6", "7", "8", "9", "11", "43", "62"],
+    res_idents: [{type:String, ref:'Character'}],
     films: [{type:String, ref:"Film"}]
 });
+
+planetSchema.statics.list= async function () {
+    return await this.find()
+        .populate('res_idents',['_id','name'])
+        .populate('films',['_id','name'])
+};
+
+planetSchema.statics.get = async function (id) {
+    return await this.findById(id)
+    .populate('res_idents',['_id','name'])
+    .populate('films',['_id','name'])
+};
+
+planetSchema.statics.insert = async function (planet) {
+    return await this.create(planet)
+};
 
 module.exports = planetSchema;
