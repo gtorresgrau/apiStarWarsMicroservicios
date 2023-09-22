@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const {createProxyMiddleware} = require('http-proxy-middleware');
 
 const server = express();
 
@@ -7,6 +8,14 @@ server.use(morgan('dev'));
 server.use(express.json());
 
 server.use(require('./routes'));
+
+app.use(
+    '/database', 
+    createProxyMiddleware({
+        target:'http://database:8004',
+        changeOrigin:true,
+    })   
+); 
 
 server.use('*',(req,res) => {
     res.status(404).send('Not Found');

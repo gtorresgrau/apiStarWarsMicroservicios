@@ -1,4 +1,4 @@
-const characters = require('./characters.json');
+const characters = axios.get('http://database:8004/Character')
 
 module.exports = {
     list: async()=>{
