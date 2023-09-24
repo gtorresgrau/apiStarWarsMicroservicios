@@ -8,14 +8,14 @@ const PORT = 8000;
 
 app.use(morgan('dev')),
 app.use(
-    '/characters', 
+    '/Character', 
     createProxyMiddleware({
         target:'http://characters:8001',
         changeOrigin:true,
     })   
 ); 
 app.use(
-    '/films', 
+    '/Film', 
     createProxyMiddleware({
         target:'http://films:8002',
         changeOrigin:true,
@@ -23,7 +23,7 @@ app.use(
 ); 
 
 app.use(
-    '/planets', 
+    '/Planet', 
     createProxyMiddleware({
         target:'http://planets:8003',
         changeOrigin:true,

@@ -5,6 +5,6 @@ module.exports = (req,res,next) => {
     if (['Character','Film','Planet'].includes(model)){
         return next();
     }else{
-        throw Error('falta el nombre del modelo',401);
+        throw new ClientError('Model`s name is lost',404);
     }
 }

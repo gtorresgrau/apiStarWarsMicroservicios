@@ -6,12 +6,10 @@ const film = require('./schemas/filmSchema');
 const planet = require('./schemas/planetSchema');
 //const {MONGO_URI} = require('../config/index')
 
-console.log('indexdb:',MONGO_URI)
-
 const conn = mongoose.createConnection(MONGO_URI)
 
 module.exports = {
     Character: conn.model("Character", caracter ),
-    Film : conn.model('Film', film),
-    Planet : conn.model('Planet', planet)
+    Film : conn.model("Film", film),
+    Planet : conn.model("Planet", planet)
 };

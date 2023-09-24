@@ -4,5 +4,5 @@ const PORT = 8004
 
 
 server.listen(PORT, () =>{
-    console.log(`dabases run on port ${PORT} `)
+    console.log(`databases run on port ${PORT} `)
 });
