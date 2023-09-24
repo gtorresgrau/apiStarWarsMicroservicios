@@ -1,14 +1,14 @@
 const axios = require('axios');
 
-const characters = axios.get('http://database:8004/Character')
 
 module.exports = {
     list: async()=>{
-        return characters;
+        const characters = await axios.get('http://database:8004/Character')
+        return characters.data;
     },
 
     create: async()=>{
-       throw Error ('aca esta el error')
+       throw Error ('Hay un error en en la Base')
         
     },
 };

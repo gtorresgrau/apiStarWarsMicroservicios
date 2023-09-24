@@ -1,14 +1,14 @@
 const axios = require('axios');
 
-const planets = axios.get('http://database:8004/Planet')
 
 module.exports = {
     list: async()=>{
-        return planets;
+        const planets = await axios.get('http://database:8004/Planet')
+        return planets.data;
     },
 
     create: async()=>{
-       throw Error ('aca esta el error')
+       throw Error ('Hay un error en en la Base')
         
     },
 };

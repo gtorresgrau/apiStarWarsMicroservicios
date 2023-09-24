@@ -1,14 +1,14 @@
 const axios = require('axios');
 
-const films = axios.get('http://database:8004/Film')
 
 module.exports = {
     list: async()=>{
-        return films;
+        const films = await axios.get('http://database:8004/Film')
+        return films.data;
     },
 
     create: async()=>{
-       throw Error ('aca esta el error')
+       throw Error ('Hay un error en en la Base')
         
     },
 };
