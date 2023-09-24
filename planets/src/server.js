@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const {createProxyMiddleware} = require('http-proxy-middleware')
 
 const server = express();
 
@@ -9,7 +10,7 @@ server.use(express.json());
 server.use(require('./routes'));
 
 server.use(
-    '/database', 
+    '/planets', 
     createProxyMiddleware({
         target:'http://database:8004',
         changeOrigin:true,
