@@ -6,6 +6,7 @@ const router = Router();
 
 
 router.get('/Character', controllers.getCharacters);
-router.post('/',middlewares.characterValidation, controllers.createCharacter);
+router.get('/Character/:id', controllers.getCharacter);
+router.post('/Character',middlewares.characterValidation, controllers.createCharacter);
 
 module.exports = router;

@@ -7,6 +7,8 @@ const router = Router();
 
 router.get('/Film', controllers.getFilms);
 
-router.post('/', middlewares.filmValidation, controllers.createFilm);
+router.get('/Film/:id', controllers.getFilm);
+
+router.post('/Film', middlewares.filmValidation, controllers.createFilm);
 
 module.exports = router;

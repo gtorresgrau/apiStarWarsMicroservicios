@@ -6,9 +6,12 @@ module.exports = {
         const characters = await axios.get('http://database:8004/Character')
         return characters.data;
     },
+    get: async(id)=>{
+        const characters = await axios.get(`http://database:8004/Character/${id}`)
+        return characters.data;
+    },
 
     create: async()=>{
-       throw Error ('Hay un error en en la Base')
-        
+        const { data } = await axios.post('http://database:8004/Character', character)
     },
 };

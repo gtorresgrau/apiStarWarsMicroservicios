@@ -10,7 +10,7 @@ server.use(express.json());
 server.use(require('./routes'));
 
 server.use(
-    '/planets', 
+    '/database', 
     createProxyMiddleware({
         target:'http://database:8004',
         changeOrigin:true,

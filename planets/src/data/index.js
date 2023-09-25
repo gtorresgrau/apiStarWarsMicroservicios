@@ -6,6 +6,11 @@ module.exports = {
         const planets = await axios.get('http://database:8004/Planet')
         return planets.data;
     },
+    
+    get: async(id)=>{
+        const planets = await axios.get(`http://database:8004/Planet/${id}`)
+        return planets.data;
+    },
 
     create: async()=>{
        throw Error ('Hay un error en en la Base')
