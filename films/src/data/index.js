@@ -8,8 +8,8 @@ module.exports = {
     },
 
     get: async(id)=>{
-        const films = await axios.get(`http://database:8004/Film/${id}`)
-        return films.data;
+        const film = await axios.get(`http://database:8004/Film/${id}`)
+        return film.data;
     },
 
     create: async()=>{
