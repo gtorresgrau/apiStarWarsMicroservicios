@@ -7,7 +7,7 @@ module.exports = async (req,res) => {
     if(id) {
       const character = await Character.delete(id);
       if(!character) {
-        return alert('character not found');
+        response(res,200,'character not found');
       }
       response(res,200,'The Character was removed');
     }else{

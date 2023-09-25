@@ -21,6 +21,12 @@ router.get('/:model/:id', validateModel, catchedAsync (async (req,res)=>{
     })
 );
 
+router.delete('/:model/:id', validateModel, catchedAsync (async (req,res)=>{
+    const {model,id} = req.params;
+    const response = await store[model].delete(id);
+    res.status(200).json(response);
+    })
+);
 
 
 module.exports = router;
