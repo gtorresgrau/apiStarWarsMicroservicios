@@ -8,6 +8,6 @@ module.exports = async (req,res) => {
       const planet = await Planet.get(id);
       !planet?
         response(res,404,planet,'planet not found')
-        :response(res,200,character);
+        :response(res,200,planet);
       }
 };
