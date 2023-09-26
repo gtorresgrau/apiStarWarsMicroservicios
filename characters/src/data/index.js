@@ -17,6 +17,6 @@ module.exports = {
     },
 
     create: async()=>{
-        const { data } = await axios.post('http://database:8004/Character', character)
+        const character = await axios.post('http://database:8004/Character', character)
     },
 };
