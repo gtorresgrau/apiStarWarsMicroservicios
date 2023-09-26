@@ -16,7 +16,4 @@ module.exports = {
         return characters.data;
     },
 
-    create: async()=>{
-        const character = await axios.post('http://database:8004/Character', character)
-    },
 };

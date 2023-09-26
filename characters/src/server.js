@@ -18,7 +18,7 @@ server.use(
 ); 
 
 server.use('*',(req,res) => {
-    res.status(404).send('Not Found');
+    this.response(res,404,'Not Found');
 });
 
 server.use((err,req,res,next)=>{
