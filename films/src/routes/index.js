@@ -11,4 +11,6 @@ router.get('/Film/:id', controllers.getFilm);
 
 router.post('/Film', middlewares.filmValidation, controllers.createFilm);
 
+router.delete('/Film/:id', controllers.deleteFilm);
+
 module.exports = router;
