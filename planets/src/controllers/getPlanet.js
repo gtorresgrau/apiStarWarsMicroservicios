@@ -3,15 +3,11 @@ const {response} = require('../utils');
 
 
 module.exports = async (req,res) => {
-    const { id } = req.params;
-    const planets = await Planet.list();
+  const { id } = req.params;
     if(id) {
       const planet = await Planet.get(id);
-      if(!planet) {
-        alert('character not found');
-        response(res,200,planets);
+      !planet?
+        response(res,404,planet,'planet not found')
+        :response(res,200,character);
       }
-      response(res,200,planet);
-    }
-    response(res,200,planets);
-  };
+};
