@@ -15,7 +15,7 @@ module.exports = {
         return films.data;
     },
     delete: async(id)=>{
-        const film = await axios.get(`http://database:8004/Film/${id}`)
+        const film = await axios.delete(`http://database:8004/Film/${id}`)
         return film.data;
     },
 };
