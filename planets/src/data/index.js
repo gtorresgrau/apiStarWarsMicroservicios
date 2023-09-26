@@ -12,8 +12,9 @@ module.exports = {
         return planets.data;
     },
 
-    create: async()=>{
-       throw Error ('Hay un error en en la Base')
+    create: async(planets)=>{
+        const planets = await axios.post(`http://database:8004/Planet/`,planets)
+        return planets
         
     },
 };
