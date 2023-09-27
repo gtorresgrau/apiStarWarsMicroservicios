@@ -6,4 +6,3 @@ module.exports=(res,statusCode,data, message)=>{
         data,
     });
 };
-

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const MONGO_URI = 'mongodb+srv://admin:admin@cluster0.pfpdqer.mongodb.net/star_wars';
-const caracter = require("./schemas/characterSchema");
+const character = require("./schemas/characterSchema");
 const film = require('./schemas/filmSchema');
 const planet = require('./schemas/planetSchema');
 //const {MONGO_URI} = require('../config/index')
@@ -9,7 +9,7 @@ const planet = require('./schemas/planetSchema');
 const conn = mongoose.createConnection(MONGO_URI)
 
 module.exports = {
-    Character: conn.model("Character", caracter ),
+    Character: conn.model("Character", character ),
     Film : conn.model("Film", film),
     Planet : conn.model("Planet", planet)
 };

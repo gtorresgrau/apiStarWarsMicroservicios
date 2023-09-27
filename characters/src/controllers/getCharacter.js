@@ -8,6 +8,6 @@ module.exports = async (req,res) => {
       const character = await Character.get(id);
       !character?
         response(res,404,character,'character not found')
-        :response(res,200,character);
+        :response(res,200,character,'Character loaded' );
       }
 };
