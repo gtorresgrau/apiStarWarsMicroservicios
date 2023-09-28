@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-const {createProxyMiddleware} = require('http-proxy-middleware');
+const {createProxyMiddleware} = require('http-proxy-middleware')
 
 const server = express();
 
@@ -18,7 +18,7 @@ server.use(
 ); 
 
 server.use('*',(req,res) => {
-    this.response(res,404,'Not Found');
+    res.status(404).send('Not Found');
 });
 
 server.use((err,req,res,next)=>{
